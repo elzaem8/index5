@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاريعي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a2e; /* لون خلفية */
+            color: #ffffff; /* لون النص */
+        }
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: #e94560; /* لون أحمر */
+            border-bottom: 3px solid #0f4c75; /* لون أزرق */
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        p {
+            margin: 5px 0 20px;
+            font-size: 1.2em;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center; /* محاذاة النصوص */
+        }
+        .project {
+            background: #0f4c75; /* لون أزرق */
+            border-radius: 8px;
+            margin: 15px 0;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column; /* تغيير الاتجاه ليتناسب مع الشاشات الصغيرة */
+            align-items: center; /* محاذاة العناصر */
+        }
+        .project h2 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #e94560; /* لون أحمر */
+        }
+        .upload-btn, .delete-btn {
+            padding: 15px 25px; /* تكبير الزر */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.5em; /* زيادة حجم الخط */
+            transition: background-color 0.3s;
+        }
+        .upload-btn {
+            background-color: #e94560; /* لون أحمر */
+            color: white;
+        }
+        .upload-btn:hover {
+            background-color: #d6335c;
+        }
+        .delete-btn {
+            background-color: #dc3545; /* لون أحمر غامق */
+            color: white;
+        }
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+        .social-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .social-btn {
+            padding: 10px 15px;
+            background-color: #0f4c75; /* لون أزرق */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .social-btn:hover {
+            background-color: #e94560; /* لون أحمر */
+        }
+        .social-btn i {
+            margin-left: 5px;
+        }
+        .code-icon {
+            font-size: 3em; /* حجم أيقونة البرمجة */
+            color: #e94560; /* لون أيقونة البرمجة */
+        }
+        .languages {
+            margin-top: 40px;
+            text-align: left;
+            padding: 20px;
+            background: #0f4c75; /* لون أزرق */
+            border-radius: 8px;
+        }
+        .language-item {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+        .language-title {
+            font-weight: bold;
+        }
+        /* تحسين استجابة التصميم */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em; /* تقليل حجم الخط في العناوين */
+            }
+            .project h2 {
+                font-size: 1.2em; /* تقليل حجم خط المشروع */
+            }
+            .upload-btn, .delete-btn, .social-btn {
+                font-size: 1em; /* تقليل حجم الخط في الأزرار */
+                padding: 10px 15px; /* تقليل حشو الأزرار */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <i class="fas fa-code code-icon"></i> <!-- أيقونة البرمجة -->
+    <h1>مرحباً بكم في صفحتي</h1>
+    <p>هنا يمكنك الاطلاع على مشاريعي</p>
+</header>
+
+<div class="container">
+    <input type="file" id="fileInput" style="display:none;" />
+    <button class="upload-btn" onclick="document.getElementById('fileInput').click();">إضافة مشروع</button>
+
+    <div id="projectList"></div>
+
+    <!-- قسم لغات البرمجة -->
+    <div class="languages">
+        <h2>لغات البرمجة التي أعمل بها:</h2>
+        <div class="language-item">
+            <span class="language-title">- HTML:</span> لغة توصيف النصوص المستخدمة في بناء صفحات الويب.
+            <a href="https://www.w3schools.com/html/html_intro.asp" target="_blank">رابط الكتاب</a>
+        </div>
+        <div class="language-item">
+            <span class="language-title">- CSS:</span> لغة تنسيق النصوص المستخدمة لتحسين مظهر صفحات الويب.
+            <a href="https://www.w3schools.com/css/css_intro.asp" target="_blank">رابط الكتاب</a>
+        </div>
+        <div class="language-item">
+            <span class="language-title">- JavaScript:</span> لغة برمجة تفاعلية تُستخدم في تطوير الويب.
+            <a href="https://eloquentjavascript.net/Eloquent_JavaScript_3rd_edition.pdf" target="_blank">رابط الكتاب</a>
+        </div>
+        <div class="language-item">
+            <span class="language-title">- Python:</span> لغة برمجة شائعة في تحليل البيانات وتعلم الآلة.
+            <a href="https://www.learnpython.org/en/Hello,_World%21" target="_blank">رابط الكتاب</a>
+        </div>
+        <div class="language-item">
+            <span class="language-title">- PHP:</span> لغة برمجة تُستخدم بشكل واسع في تطوير تطبيقات الويب.
+            <a href="https://www.php.net/manual/en/tutorial.php" target="_blank">رابط الكتاب</a>
+        </div>
+        <div class="language-item">
+            <span class="language-title">- Java:</span> لغة برمجة متعددة الاستخدامات تُستخدم في تطوير تطبيقات سطح المكتب والويب.
+            <a href="https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html" target="_blank">رابط الكتاب</a>
+        </div>
+        <div class="language-item">
+            <span class="language-title">- C++:</span> لغة برمجة تستخدم في تطوير البرمجيات والألعاب.
+            <a href="http://www.learncpp.com/" target="_blank">رابط الكتاب</a>
+        </div>
+        <div class="language-item">
+            <span class="language-title">- C#:</span> لغة برمجة تُستخدم في تطوير التطبيقات على منصة .NET.
+            <a href="https://docs.microsoft.com/en-us/dotnet/csharp/quick-starts/hello-world-tutorial" target="_blank">رابط الكتاب</a>
+        </div>
+        <div class="language-item">
+            <span class="language-title">- Ruby:</span> لغة برمجة تُستخدم في تطوير تطبيقات الويب.
+            <a href="https://www.ruby-lang.org/en/documentation/quickstart/" target="_blank">رابط الكتاب</a>
+        </div>
+        <div class="language-item">
+            <span class="language-title">- Swift:</span> لغة برمجة تُستخدم في تطوير تطبيقات iOS.
+            <a href="https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html" target="_blank">رابط الكتاب</a>
+        </div>
+    </div>
+</div>
+
+<!-- روابط التواصل -->
+<div class="social-buttons">
+    <a href="https://wa.me/+201226499832" target="_blank" class="social-btn">
+        واتساب <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://t.me/y_e2u" target="_blank" class="social-btn">
+        تيليجرام <i class="fab fa-telegram-plane"></i>
+    </a>
+</div>
+
+<script>
+    let projectCount = 0;
+
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        const files = event.target.files;
+        if (files.length > 0) {
+            const projectName = files[0].name;
+            projectCount++;
+
+            const projectDiv = document.createElement('div');
+            projectDiv.className = 'project';
+            projectDiv.innerHTML = `
+                <h2>مشروع ${projectCount}: ${projectName}</h2>
+                <button class="delete-btn" onclick="deleteProject(this)">حذف المشروع</button>
+            `;
+            document.getElementById('projectList').appendChild(projectDiv);
+            document.getElementById('fileInput').value = ''; // إعادة تعيين المدخل
+        }
+    });
+
+    function deleteProject(button) {
+        const projectDiv = button.parentElement;
+        projectDiv.remove(); // حذف المشروع
+        projectCount--; // تقليل عدد المشاريع
+    }
+</script>
+
+</body>
+</html>
